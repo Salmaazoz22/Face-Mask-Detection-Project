@@ -1,0 +1,7 @@
+dataset/
+dataset_resized/
+*.jpg
+*.png
+*.jpeg
+__pycache__/
+.ipynb_checkpoints/
