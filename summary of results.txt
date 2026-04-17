@@ -1,0 +1,13 @@
+Number of images : 11,792
+
+Number of images in train : 10000	, with ratio (84.80%)
+number of images in Validation : 800	, with ratio (6.78%)
+number of images in Test : 992		, with ratio (8.41%)
+
+images sizes (original) was like this : {(56, 56), (139, 139), (116, 116), (61, 61), (125, 125), (52, 52), (134, 134), (39, 39), (103, 103), (57, 57), (48, 48), (122, 122), (34, 34)}
+
+All images were resized to (224, 224)
+
+Total Bad Images: 0
+
+Total non-RGB images: 0
