@@ -18,17 +18,6 @@ The system is designed to be:
 - 🎯 Highly accurate  
 - 🚀 Easily deployable in real-world scenarios  
 
-### 🎯 Model Output
-
-```json
-{
-  "status": "mask_on",
-  "confidence": 0.96
-}
-```
-- Target Confidence: ~0.96
-- Classes: WithMask, WithoutMask, (optional: MaskIncorrect)
-
 ---
 
 ## 🛠️ Tech Stack
@@ -60,8 +49,7 @@ The model was trained using the **Face Mask Dataset** (~12K images) from Kaggle.
 ## 🏗️ Model Architecture & Training
 We utilized **Transfer Learning** to leverage features from models pre-trained on ImageNet.
 
--   **Primary Model:** **MobileNetV2** (Selected for its excellent speed/accuracy tradeoff on edge devices).
--   **Secondary Model:** ResNet18 (Used for performance benchmarking).
+-   **The Model:** **MobileNetV2** (Selected for its excellent speed/accuracy tradeoff on edge devices).
 
 ### Strategy
 - Freeze the backbone feature extractor.
@@ -93,16 +81,6 @@ The application exposes a REST API for real-time predictions.
 uvicorn api.app:app --reload
 ```
 
-- Endpoint: POST /predict
-### Response:
-
-```JSON
-{
-  "status": "WithMask",
-  "confidence": 0.96
-}
-```
-
 ----
 
 ## 🐳 Docker
@@ -118,13 +96,18 @@ docker run -p 8000:8000 mask-app
 
 ## 📁 Project Structure
 
+```text
+/
+
 Face-Mask-Detection-Project/
+
 ├── insights/             # Reports and insights from the training and evaluation
 ├── notebooks/            # Data Preparation, EDA, Training, and Evaluation Jupyters
 ├── model/                # Saved .pth weights
 ├── api/                  # FastAPI application
 ├── requirements.txt      # Project dependencies
 └── README.md             
+```
 
 ---
 
