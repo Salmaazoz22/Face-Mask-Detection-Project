@@ -63,11 +63,11 @@ We utilized **Transfer Learning** to leverage features from models pre-trained o
 The model achieved high performance, particularly on clear frontal faces.
 
 ### Metrics
-- **Accuracy:** ~96%
-- **Error Analysis:** Most misclassifications occurred in scenarios with extreme low lighting or heavy occlusion (e.g., hands over face).
+- **Accuracy:** ~84%
+- **Error Analysis:** Most misclassifications occurred in scenarios with extreme low lighting or heavy occlusion (e.g., hands over face), The model performs well but can be improved with more diverse data.
 
 > [!TIP]
-> Check `notebooks/evaluation.ipynb` for detailed confusion matrices and loss/accuracy curves.
+> Check `Insights` for detailed confusion matrices and loss/accuracy curves.
 
 ---
 
@@ -97,8 +97,6 @@ docker run -p 8000:8000 mask-app
 ## 📁 Project Structure
 
 ```text
-/
-
 Face-Mask-Detection-Project/
 
 ├── insights/             # Reports and insights from the training and evaluation
