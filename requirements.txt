@@ -1,0 +1,11 @@
+# Core deep learning & vision
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=10.0.0
+
+# API framework
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+
+# Multipart file upload support (required by FastAPI for UploadFile)
+python-multipart>=0.0.9
