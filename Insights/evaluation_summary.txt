@@ -1,0 +1,24 @@
+
+Model Evaluation Summary
+
+Test Accuracy: 83.87%
+
+              precision    recall  f1-score   support
+
+    WithMask       0.75      1.00      0.86       483
+ WithoutMask       0.99      0.69      0.81       509
+
+    accuracy                           0.84       992
+   macro avg       0.87      0.84      0.84       992
+weighted avg       0.88      0.84      0.84       992
+
+
+Total Misclassified Images: 160
+
+Error Analysis:
+- Errors occur in low lighting
+- Side faces
+- Incorrect mask usage
+
+Conclusion:
+The model performs well but can be improved with more diverse data.
