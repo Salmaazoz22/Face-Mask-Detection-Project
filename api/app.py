@@ -23,6 +23,7 @@ from torchvision import models, transforms
 from PIL import Image
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 # ---------------------------------------------------------------------------
 # Configuration
@@ -70,7 +71,7 @@ def load_model() -> nn.Module:
     checkpoint = torch.load(MODEL_PATH, map_location=DEVICE)
 
     if isinstance(checkpoint, dict) and "model_state_dict" in checkpoint:
-        print("✅ Loaded model_state_dict")
+        print(" Loaded model_state_dict")
         model.load_state_dict(checkpoint["model_state_dict"])
     else:
         model.load_state_dict(checkpoint)
@@ -78,7 +79,7 @@ def load_model() -> nn.Module:
     model.to(DEVICE)
     model.eval()
 
-    print("✅ Model loaded successfully")
+    print(" Model loaded successfully")
 
     return model
 
@@ -132,6 +133,15 @@ app = FastAPI(
     version="2.0.0"
 )
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://127.0.0.1:5500"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # ---------------------------------------------------------------------------
 # Health Check
 # ---------------------------------------------------------------------------
@@ -146,7 +156,7 @@ def health_check():
 
 
 # ---------------------------------------------------------------------------
-# Model Info Endpoint ⭐ (Professional addition)
+# Model Info Endpoint
 # ---------------------------------------------------------------------------
 
 @app.get("/info", tags=["Info"])
@@ -215,7 +225,7 @@ async def predict(
         4
     )
 
-    # ⭐ Add Action Logic (Required in project)
+
 
     if class_name == "mask_on":
         action = "Allow entry"

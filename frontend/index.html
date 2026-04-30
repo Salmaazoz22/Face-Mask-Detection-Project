@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Mask Detection</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Face Mask Detection</h1>
+      <p class="subtitle">Real-time mask detection powered by AI</p>
+    </header>
+
+    <main>
+      <div class="video-wrapper">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas id="overlay"></canvas>
+        <div id="label-overlay" class="label-overlay hidden"></div>
+      </div>
+
+      <canvas id="capture" class="hidden"></canvas>
+
+      <div class="controls">
+        <button id="startBtn" class="btn btn-primary">Start Detection</button>
+        <button id="stopBtn" class="btn btn-secondary" disabled>Stop Detection</button>
+      </div>
+
+      <div id="result-card" class="result-card hidden">
+        <div class="result-card-header">
+          <span class="result-label">Last Result</span>
+          <span id="result-source" class="source-tag">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Status</span>
+          <span id="result-status" class="result-value badge">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Action</span>
+          <span id="result-action" class="result-value">—</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">Confidence</span>
+          <div class="confidence-wrapper">
+            <div class="confidence-bar-track">
+              <div id="confidence-bar" class="confidence-bar"></div>
+            </div>
+            <span id="result-confidence" class="result-value">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="error-msg" class="error-msg hidden"></div>
+
+      <!-- ── Divider ── -->
+      <div class="section-divider">
+        <span>or predict from image</span>
+      </div>
+
+      <!-- ── Upload section ── -->
+      <section class="upload-section">
+        <h2 class="section-title">Image Upload</h2>
+
+        <label class="file-drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept="image/*" class="hidden" />
+          <div class="drop-icon">&#128247;</div>
+          <p class="drop-primary">Click to choose an image</p>
+          <p class="drop-secondary">or drag &amp; drop here — JPG, PNG, WEBP</p>
+        </label>
+
+        <div id="previewWrapper" class="preview-wrapper hidden">
+          <img id="imagePreview" class="image-preview" alt="Selected image preview" />
+          <button id="clearFileBtn" class="clear-btn" title="Remove image">&#x2715;</button>
+        </div>
+
+        <button id="predictUploadBtn" class="btn btn-primary upload-predict-btn" disabled>
+          Predict Image
+        </button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Webcam frames are processed locally and sent to <code>localhost:8000</code></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
