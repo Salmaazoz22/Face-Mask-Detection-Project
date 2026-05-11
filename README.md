@@ -101,9 +101,10 @@ Face-Mask-Detection-Project/
 
 ├── insights/             # Reports and insights from the training and evaluation
 ├── notebooks/            # Data Preparation, EDA, Training, and Evaluation Jupyters
-├── model/                # Saved .pth weights
+├── models/               # Saved .pth weights
 ├── api/                  # FastAPI application
 ├── requirements.txt      # Project dependencies
+├── frontend/
 └── README.md             
 ```
 
