@@ -1,0 +1,17 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.env
+.git
+.gitignore
+*.ipynb
+
+# Datasets (important)
+Dataset
+Dataset_Resized
+*.zip
+
+# System files
+.DS_Store
+Thumbs.db
