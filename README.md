@@ -431,7 +431,7 @@ frontend/Dockerfile
 | Sameh Maged Ahmed        | Data Manager                                      |
 | Malak Tarek Ahmed        | EDA & Visualizer                                  |
 | Ahmed Khaled Sayed       | Augmentation Designer                             |
-| Rawan Essam El-Din       | Model Trainer                                     |
-| Mohamed Saied Ahmed      | Evaluator                                         |
+| Rawan Essam-ElDin Fahmy       | Model Trainer                                     |
+| Mohammed Saied Ahmed      | Evaluator                                         |
 | Salma Mohamed Abdelaziz  | Team Leader, API Developer & Frontend Developer   |
 | Shahd Mohamed Abdelhay   | Deployer                                          |
